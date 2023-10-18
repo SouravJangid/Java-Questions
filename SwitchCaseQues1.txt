@@ -1,0 +1,183 @@
+1-->Menu-Driven Calculator: Create a menu-driven calculator program that allows the user to choose from a list of operations (addition, subtraction, multiplication, division) using a switch statement. Take two numbers as input and perform the selected operation.
+
+        package SwitchCase;
+        import java.util.Scanner;
+
+        public class calculator {
+            public static void main(String[] args) {
+                Scanner sc =new Scanner(System.in);
+                System.out.println("Enter the operation among :");
+                System.out.println("+ , -, *, %, ^");
+                String c =sc.nextLine();
+                System.out.println("Enter two numbers ");
+                int num1 =sc.nextInt();
+                int num2 =sc.nextInt();
+                switch(c){
+                    case "+":
+                    System.out.println("Sum ="+(num1+num2));
+                    break  ;
+                    case "-":
+                    System.out.println("Difference is "+(num1-num2));
+                    break  ;
+                    case "*":
+                    System.out.println("Multiplication is  ="+(num1*num2));
+                    break  ;
+                    case "/":
+                    System.out.println("Division is  ="+(num1/num2));
+                    break  ;
+                    case "%":
+                    System.out.println("Reminder ="+(num1%num2));
+                    break  ;
+                    case "^":
+                    System.out.println("num1 raise to Power num2="+(num1^num2));
+                    break  ;
+                }
+                sc.close();
+            }
+            
+        }
+
+2-->Simple ATM Machine: Implement a simple ATM machine program using a switch statement. Allow users to check their balance, deposit money, and withdraw money. Keep track of the user's account balance.
+
+            package SwitchCase;
+            import java.util.Scanner;
+
+            public class atm {
+                public static void main(String[] args) {
+                Scanner sc= new Scanner(System.in);
+
+                int i=0;
+                while( i <7){ 
+                System.out.println("Enter your option \n 1 : Check Balance \n 2 : Deposit Money \n 3 : Withdraw Money \n 4:Exit ");
+                System.out.println("Enter your choice ");
+                int n =sc.nextInt();
+
+                int moneyBalance =0;
+                switch(n){
+                    case 1:
+                    System.out.println("Money Balance is :"+ moneyBalance);
+                    break;
+
+                    case 2:
+                    System.out.println("Enter money you want to deposit :");
+                    int deposit =sc.nextInt();
+                    moneyBalance+=deposit;
+                    System.out.println("Your current balance is "+moneyBalance);
+                    break;
+
+
+                    case 3:
+                    System.out.println("Enter money you want to Withdraw :");
+                    int withdraw =sc.nextInt();
+                    
+                    if(withdraw>moneyBalance){
+                        System.out.println("Not enough amount \n");
+                    }
+                    else{ 
+                    //  System.out.println("Enter money you want to Withdraw :");
+                    // int withdraw =sc.nextInt();
+                    moneyBalance-=withdraw;
+                    System.out.println("Your Current balance is "+moneyBalance);
+                    }
+                    break;
+
+                    case 4:
+                    i=7;
+                    break ;
+                }
+                i++ ;
+            }
+            sc.close();
+
+
+                
+                }
+
+            }
+
+3--> Weekday or Weekend Checker: Write a program that takes a day of the week as input and uses a switch statement to determine whether it's a weekday or a weekend day.
+
+    package SwitchCase;
+    import java.util.Scanner;
+
+    public class weekDayWeekend {
+        public static void main(String[] args) {
+            Scanner sc =new Scanner(System.in);
+            System.out.println("Enter the day :");
+            String day =sc.nextLine();
+            switch(day){
+                case "sunday":
+                case "saturday":
+                System.out.println("Weekend");
+                break  ;
+                default:
+                System.out.println("WeekDay");
+                
+            }
+            sc.close();
+        }
+    }
+
+4-->Season Determiner: Create a program that takes a month as input and uses a switch statement to determine the season (e.g., spring, summer, fall, or winter) associated with that month.
+                package SwitchCase;
+                import java.util.Scanner;
+
+                public class seasons {
+                    public static void main(String[] args) {
+                        Scanner sc =new Scanner(System.in);
+                        System.out.println("Enter the month number :");
+                        int n =sc.nextInt();
+                        switch(n){
+                            case 1:
+                            case 2:
+                            case 11:
+                            case 12:
+                            System.out.println("Winter");
+                            break  ;
+
+                            case 3:
+                            case 4:
+                            System.out.println("Spring");
+                            break;
+
+                            case 5:
+                            case 6:
+                            case 7:
+                            System.out.println("Summer");
+                            break;
+
+                            case 8:
+                            case 9:
+                            case 10:
+                            System.out.println("Autumn");
+                            break;
+                        
+                        }
+                        sc.close();
+                    }
+                    
+                }
+
+5-->Simple Traffic Light: Implement a program that simulates a simple traffic light with states like "Red," "Yellow," and "Green." Use a switch statement to handle the transitions between states.
+            package SwitchCase;
+            import java.util.Scanner;
+
+            public class trafficlight {
+                public static void main(String[] args) {
+                    Scanner sc =new Scanner(System.in);
+                    System.out.println("Enter the color of traffic light :");
+                    String light =sc.nextLine();
+                    switch(light){
+                        case "red":
+                        System.out.println("Stop and next light is yellow");
+                        break  ;
+                        case "yellow":
+                        System.out.println("Wait and next light is green");
+                        break  ;
+                        case "green":
+                        System.out.println("Go and next light is yellow");
+                        break  ;
+                    }
+                    sc.close();
+                }
+            }

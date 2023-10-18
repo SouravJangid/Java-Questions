@@ -1,0 +1,220 @@
+1--->  Leap Year: Write a program that checks if a given year is a leap year. A leap year is divisible by 4, but not divisible by 100 unless it is also divisible by 400.
+				
+	--->			import java.util.Scanner;
+	|			public class LeapYear {				
+	|			    public static void main(String[] args) {
+	|			        Scanner scanner = new Scanner(System.in);
+	|			        System.out.print("Enter a year: ");
+	|			        int year = scanner.nextInt();
+	|			        if (( year%400 == 0)|| (( year%4 == 0 ) &&( year%100 != 0))) {
+	|			              System.out.println(year + " is a leap year.");
+	|			            }
+	|					else{
+	|			                System.out.println(year + " is not a leap year.");
+	|			            }
+	|			        scanner.close();
+	|			    }
+	--->			}
+
+
+2--> Vowel or Consonant: Write a program that takes a character as input and determines whether it's a vowel or a consonant.
+
+					import java.util.Scanner;
+					public class VowelOrConsonant{
+					public static void main(String[] args) {
+						Scanner sc = new Scanner(System.in);
+						System.out.print("Enter a character: ");
+						char c = toLowerCase(sc.next().charAt(0));
+						sc.close();
+						if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+						System.out.println(c + " is a vowel.");
+						} else {
+						System.out.println(c + " is a consonant.");
+						}
+					}
+					}
+
+
+3-->Temperature Converter: Write a program that converts temperatures between Fahrenheit and Celsius. The user should be able to choose the input and output scales, and the program should perform the conversion accordingly.
+
+			import java.util.Scanner;
+			public class TemperatureConverter {
+			public static void main(String[] args) {
+				Scanner sc = new Scanner(System.in);
+				System.out.print("Enter the input scale (F for Fahrenheit, C for Celsius): ");
+				char inputScale = Character.toUpperCase(sc.next().charAt(0));
+				System.out.print("Enter the output scale (F for Fahrenheit, C for Celsius): ");
+				char outputScale = Character.toUpperCase(sc.next().charAt(0));
+				System.out.print("Enter the temperature value: ");
+         		double inputValue = sc.nextDouble();
+				sc.close();
+				    double outputValue;
+				if ((inputScale == 'F' || inputScale == 'C') && (outputScale == 'F' || outputScale == 'C')) {
+					if (inputScale != outputScale) {
+					if (inputScale == 'F' && outputScale == 'C') {
+					outputValue = (inputValue - 32) * 5 / 9;
+					} else {
+					outputValue = (inputValue * 9 / 5 + 32);
+					}
+					System.out.println(inputValue + " " + inputScale + " = " + outputValue + " " + outputScale);
+				} else {
+					System.out.println("No conversion is needed. The temperature value is " + inputValue + " " + inputScale);
+				}
+				} else {
+				System.out.println("Invalid scales. Please enter F or C only.");
+				}
+			}
+			}
+
+
+
+
+4-->Day of the Week Calculator: Write a program that takes a number (1-7) as input and prints the corresponding day of the week (e.g., 1 represents Sunday, 2 represents Monday, etc.).
+
+			package SwitchCase;
+			import java.util.Scanner;
+
+			public class weekDayWeekend {
+				public static void main(String[] args) {
+					Scanner sc =new Scanner(System.in);
+					System.out.println("Enter the day :");
+					String day =sc.nextLine();
+					switch(day){
+						case "sunday":
+						case "saturday":
+						System.out.println("Weekend");
+						break  ;
+						default:
+						System.out.println("WeekDay");
+						
+					}
+					sc.close();
+				}
+			}
+
+5--> Tax Calculator: Create a program that calculates the income tax for a person based on their income. Consider different tax slabs and apply the appropriate tax rate using if-else statements.
+
+	If the salary is below 10k then no tax.
+	if between 10k-20k then 10% tax
+	if between 20k-30k then 15% tax
+	and if the basic is above 30k then flat 25% tax is applicable.
+
+				import java.util.Scanner;
+				public class TaxCalculator {
+				public static void main(String[] args) {
+					Scanner sc = new Scanner(System.in);
+					System.out.print("Enter your income: ");
+					double income = sc.nextDouble();
+					sc.close();
+					double taxRate;
+					if (income < 10000) {
+					taxRate = 0;
+					} else if (income < 20000) {
+					taxRate = 0.1;
+					} else if (income < 30000) {
+					taxRate = 0.15;
+					} else {
+					taxRate = 0.25;
+					}
+					System.out.println("Your income tax is: " + tax);
+				}
+				}
+
+
+6-->Discount Calculator: Create a program that calculates the discount amount for a customer's purchase based on their total bill and a set of discount rules. Apply different discounts based on the purchase amount. Also print the bill recipt on the output screen.
+
+	1k-5k then 5% off
+	5k-10k then 10% off
+	10-20k- then 15% off
+	Anything above 20k then 25%off
+
+				import java.util.Scanner;
+				public class DiscountCalculator {
+				public static void main(String[] args) {
+					Scanner sc = new Scanner(System.in);
+					System.out.print("Enter your purchase amount: ");
+					double purchase = sc.nextDouble();
+					sc.close();
+					double discountRate;
+					if (purchase < 1000) {
+					discountRate = 0;
+					} else if (purchase < 5000) {
+					discountRate = 0.05;
+					} else if (purchase < 10000) {
+					discountRate = 0.1;
+					} else if (purchase < 20000) {
+					discountRate = 0.15;
+					} else {
+					discountRate = 0.25;
+					}
+					double discount = purchase * discountRate;
+					double finalAmount = purchase - discount;
+					System.out.println("Bill Receipt");
+					System.out.println("Purchase Amount: " + String.format("%.2f", purchase));
+					System.out.println("Discount Amount: " + String.format("%.2f", discount));
+					System.out.println("Final Amount: " + String.format("%.2f", finalAmount));
+					System.out.println("Thank you for shopping with us!");
+					
+				}
+				}
+
+
+
+7-->Create a Java program that takes employee details (name, basic salary) and calculates the gross salary by adding HRA (30% of basic), DA (20% of basic), and TA (fixed at 2000). Deduct income tax based on a tax rate. Generate salary slips displaying employee information, gross salary, income tax, and net salary.
+
+      Gross = basic+hra+da+ta
+     Net = gross - tax.
+
+			import java.util.Scanner;
+			+public class SalaryCalculator {
+
+			public static double calculateGross(double basic) {
+				// Return the gross salary
+				return gross;
+			}
+
+			
+			public static double calculateTax(double gross, double taxRate) {
+			
+				// Return the income tax
+				return tax;
+			}
+
+			
+			public static void printSalarySlip(String name, double basic, double gross, double tax, double net) {
+				// Print a line of dashes to separate the salary slip from other output
+				System.out.println("--------------------------------------------------");
+				// Print the salary slip with appropriate formatting
+
+				// Print another line of dashes to separate the salary slip from other output
+				System.out.println("--------------------------------------------------");
+			}
+
+				public static void main(String[] args) {
+				Scanner sc = new Scanner(System.in);
+				System.out.print("Enter your name: ");
+				String name = sc.nextLine();
+				System.out.print("Enter your basic salary: ");
+				double basic = sc.nextDouble();
+				System.out.print("Enter your tax rate: ");
+				double taxRate = sc.nextDouble();
+				sc.close();
+			final double HRA_PERCENT = 0.3;
+				final double DA_PERCENT = 0.2;
+				final double TA_AMOUNT = 2000;
+				double hra = basic * HRA_PERCENT;
+				double da = basic * DA_PERCENT;
+				double gross = basic + hra + da + TA_AMOUNT;
+				double tax = gross * taxRate;
+				
+				double net = gross - tax;
+					System.out.println("Salary Slip");
+				System.out.println("Employee Name: " + name);
+				System.out.println("Basic Salary: " + String.format("%.2f", basic));
+				System.out.println("Gross Salary: " + String.format("%.2f", gross));
+				System.out.println("Income Tax: " + String.format("%.2f", tax));
+				System.out.println("Net Salary: " + String.format("%.2f", net));
+				System.out.println("Thank you for your hard work!");
+			}
+			}
+

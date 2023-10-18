@@ -1,0 +1,364 @@
+1-->Even or Odd: Write a Java program that prints all even and odd numbers in the given range
+
+            package Loop;
+
+            import java.util.Scanner;
+
+            public class RangeOddEven {
+                public static void main(String[] args) {
+                    Scanner sc = new Scanner(System.in);
+                    System.out.println("Enter starting number");
+                    int st = sc.nextInt();
+                    System.out.println("Enter ending number");
+                    int end = sc.nextInt();
+
+                    System.out.println("Even numbers are ");
+                    for(int i=st ;i<end ;i++){
+                        if(i%2==0)
+                        System.out.println(i);
+                    }
+
+                    System.out.println("Odd numbers are ");
+                    for(int i=st ;i<end ;i++){
+                        if(i%2!=0)
+                        System.out.println(i);
+                    }
+                    sc.close();
+                }
+
+            }
+
+2--> Count digits
+                    package Loop;
+
+                    import java.util.Scanner;
+
+                    public class countDigits {
+
+                        private static void countDigit(long n) {
+                        int digits=0;
+                        while(n!=0){
+                            n= n/10;
+                            digits++;
+                        }
+                        System.out.println("Number of digits are "+digits);
+                    }
+                    
+                        public static void countByLog(long n ){
+                            System.out.println("Number of digits are "+(int)Math.floor(Math.log10(n) + 1));
+                        } 
+
+                        public static void countByString(long n ){
+                            String s = Long.toString(n);
+                            System.out.println("Number of digits are "+s.length());
+                        }
+
+                        public static void main(String[] args) {
+                            Scanner sc = new Scanner(System.in);
+                            System.out.println("Enter a number ");
+                            long n = sc.nextInt();
+
+                            countByLog(n);
+                            countByString(n);
+                            countDigit(n);
+
+                            sc.close();
+                        }
+
+                    }
+
+
+3-->  Digit Sum.You are given an integer number, say 123 the output will be 1+2+3=6.
+            package Loop;
+
+            import java.util.Scanner;
+
+            public class sumOfdigits {
+                private static void sumOfDigit(int n) {
+                    int sum =0;
+                    while(n!=0){
+                    sum+=n%10;
+                    n=  n/10;
+                    }
+                    System.out.println("Sum of digits "+sum);
+                }
+                
+                public static void main(String[] args) {
+                    Scanner sc =new Scanner(System.in);
+                    System.out.println("Enter a number  ");
+                    int n = sc.nextInt();
+                    
+                    sumOfDigit(n);
+
+
+                    sc.close();
+                }
+
+            }
+4--> Factorial: Write a program to calculate the factorial of a given number using a loop (e.g., 5! = 5 x 4 x 3 x 2 x 1).
+
+                package Loop;
+
+                import java.util.Scanner;
+
+                public class factorial {
+                    
+                    private static int fact(int n) {
+                        if(n==0||n==1) return 1;
+                        return n*fact(n-1);
+                    }
+
+                    public static void factoFor(int n ){
+                        int facto =1 ;
+                        for(int i =2 ; i<=n ;i++){
+                        facto*=i;
+                        }
+                        System.out.println("Factorial of number is "+facto);
+                    }
+                    
+                    public static void main(String[] args) {
+                        Scanner sc = new Scanner(System.in);
+                        System.out.println("Enter a number ");
+                        int n =sc.nextInt();
+                    System.out.println("Factorial of number is "+fact(n));
+
+                    factoFor(n);
+                        sc.close();
+                    }
+                }
+
+5--> Prime Number: Write a Java program to check if a given number is prime or not using loops and conditional statements. 
+
+                    package Loop;
+
+                    import java.util.Scanner;
+
+                    public class prime_or_not {
+
+                        public static String primenum(int n ){
+                            if(n==1) return "Not a prime number" ;
+                        
+                            for (int i =2 ; i<n/2 ; i++)
+                                if (n %i ==0)
+                                return "Not a prime number" ;
+
+                        return "Prime number" ;
+                            
+                            
+                        }
+                        public static void main(String[] args) {
+                            Scanner sc  =new Scanner(System.in);
+                            System.out.println("Enter a number ");
+
+                            int n = sc.nextInt();
+                            System.out.println(primenum(n));
+
+                            sc.close();
+
+                        }
+
+                    }                
+
+6--> Fibonacci Series: Write a program to generate the Fibonacci series up to a specified number of terms using a loop (e.g., 0, 1, 1, 2, 3, 5, 8, ...).
+         
+            package Loop;
+
+            import java.util.Scanner;
+
+            public class fibonacci {    
+                public static void main(String[] args) {
+                    Scanner sc=new Scanner(System.in );
+                System.out.println("Enter a number ");
+
+                int n =sc.nextInt();
+                int num1  =0 , num2=1;
+                for (int i =0 ; i<n ;i++){
+                    System.out.print(num1+" ");
+                        int num3 =num1 +num2 ;
+                        num1 =num2 ;
+                        num2 =num3;
+                }
+                sc.close();
+                }
+                
+            }
+
+7--> Palindrome Number: Write a Java program to check if a given number is a palindrome (e.g., 121, 1331) using loops and conditional statements.
+
+            package Loop;
+
+            import java.util.Scanner;
+
+            public class palinrome {
+
+                public static int reverse(int n ) {
+                    int temp=n ;
+
+                int rev = 0; 
+                while (temp > 0) { 
+                    rev = rev * 10 + temp % 10; 
+                    temp = temp / 10; 
+                } 
+                return rev ;
+                }
+                public static void main(String[] args) {
+                    Scanner sc=new Scanner(System.in );
+                System.out.println("Enter a number ");
+
+                int n =sc.nextInt();
+
+                int rev= reverse(n);
+                if(n==rev){
+                    System.out.println("Number is palindrome ");
+                }
+                else 
+                System.out.println("Number is not palindrome ");
+                sc.close();
+                }
+                
+            }
+
+8--> Reverse a Number: Write a program to reverse a given number using loops.
+
+        package Loop;
+
+        import java.util.Scanner;
+
+        public class reversenum {
+            public static int reverse(int n ) {
+                int temp=n ;
+
+            int rev = 0; 
+            while (temp > 0) { 
+                rev = rev * 10 + temp % 10; 
+                temp = temp / 10; 
+            } 
+            return rev ;
+            }
+            public static void main(String[] args) {
+                Scanner sc=new Scanner(System.in );
+            System.out.println("Enter a number ");
+
+            int n =sc.nextInt();
+            System.out.println(reverse(n));
+            sc.close();
+            }
+        }
+
+9-->Anagram Checker: Write a program that checks whether two given strings are anagrams of each other (i.e., they have the same characters in a different order).
+
+            package Loop;
+
+                import java.util.Arrays;
+                import java.util.Scanner;
+
+                public class anagramString {
+
+                    public static boolean anagramOrNot(String str1, String str2) {
+
+                        if (str1.length() == str2.length()) {
+                            str1 = str1.toLowerCase();
+                            str2 = str2.toLowerCase();
+                            char[] charArray1 = str1.toCharArray();
+                            char[] charArray2 = str2.toCharArray();
+                            Arrays.sort(charArray1);
+                            Arrays.sort(charArray2);
+                            for (int i = 0; i < charArray1.length; i++) {
+                                if (charArray1[i] != charArray2[i]) {
+                                    return false;
+                                }
+                            }
+                        }
+                        return true;
+                    }
+
+                    public static void main(String[] args) {
+                        Scanner sc = new Scanner(System.in);
+
+                        System.out.println("Enter first String");
+                        String str1 = sc.next();
+                        System.out.println("Enter second String");
+                        String str2 = sc.next();
+
+                        boolean ans = anagramOrNot(str1, str2);
+                        if (ans == true)
+                            System.out.println("Strings are  anagram ");
+                        else
+                            System.out.println("Strings are not anagram ");
+                        sc.close();
+                    }
+
+                }
+
+10-->Count Characters in a String: Write a program that counts the number of occurrences of each character in a given string.
+
+    package Loop;
+
+        import java.util.Scanner;
+
+        public class countDigits {
+
+            private static void countDigit(long n) {
+            int digits=0;
+            while(n!=0){
+                n= n/10;
+                digits++;
+            }
+            System.out.println("Number of digits are "+digits);
+        }
+        
+            public static void countByLog(long n ){
+                System.out.println("Number of digits are "+(int)Math.floor(Math.log10(n) + 1));
+            } 
+
+            public static void countByString(long n ){
+                String s = Long.toString(n);
+                System.out.println("Number of digits are "+s.length());
+            }
+
+            public static void main(String[] args) {
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Enter a number ");
+                long n = sc.nextInt();
+
+                countByLog(n);
+                countByString(n);
+                countDigit(n);
+
+                sc.close();
+            }
+
+        }
+
+11-->Print Prime Numbers: Write a program to print all prime numbers within a given range.
+        package Loop;
+
+        import java.util.Scanner;
+
+        public class primeRange {
+
+            public static void prime_N(int st , int end){
+                for (int i= st; i<= end; i++) {
+                int  flag = 1;
+                    for (int j = 2; j <= i/ 2; ++j) {
+                        if (i% j == 0) {
+                            flag = 0;
+                        }
+                    }
+                    if (flag == 1)
+                        System.out.print(i+ " ");
+                }
+            }
+            public static void main(String[] args) {
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Enter starting number");
+                int st = sc.nextInt();
+                System.out.println("Enter ending number");
+                int end = sc.nextInt();
+
+                prime_N(st, end);
+
+                sc.close();
+            }
+            
+        }
