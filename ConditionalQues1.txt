@@ -1,20 +1,20 @@
 1--->  Leap Year: Write a program that checks if a given year is a leap year. A leap year is divisible by 4, but not divisible by 100 unless it is also divisible by 400.
 				
-	--->			import java.util.Scanner;
-	|			public class LeapYear {				
-	|			    public static void main(String[] args) {
-	|			        Scanner scanner = new Scanner(System.in);
-	|			        System.out.print("Enter a year: ");
-	|			        int year = scanner.nextInt();
-	|			        if (( year%400 == 0)|| (( year%4 == 0 ) &&( year%100 != 0))) {
-	|			              System.out.println(year + " is a leap year.");
-	|			            }
-	|					else{
-	|			                System.out.println(year + " is not a leap year.");
-	|			            }
-	|			        scanner.close();
-	|			    }
-	--->			}
+	   			import java.util.Scanner;
+				public class LeapYear {				
+				    public static void main(String[] args) {
+				        Scanner scanner = new Scanner(System.in);
+				        System.out.print("Enter a year: ");
+				        int year = scanner.nextInt();
+				        if (( year%400 == 0)|| (( year%4 == 0 ) &&( year%100 != 0))) {
+				              System.out.println(year + " is a leap year.");
+				            }
+						else{
+				                System.out.println(year + " is not a leap year.");
+				            }
+				        scanner.close();
+				    }
+				}
 
 
 2--> Vowel or Consonant: Write a program that takes a character as input and determines whether it's a vowel or a consonant.
@@ -24,7 +24,7 @@
 					public static void main(String[] args) {
 						Scanner sc = new Scanner(System.in);
 						System.out.print("Enter a character: ");
-						char c = toLowerCase(sc.next().charAt(0));
+						char c = (sc.next().charAt(0));
 						sc.close();
 						if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
 						System.out.println(c + " is a vowel.");
@@ -166,29 +166,7 @@
      Net = gross - tax.
 
 			import java.util.Scanner;
-			+public class SalaryCalculator {
-
-			public static double calculateGross(double basic) {
-				// Return the gross salary
-				return gross;
-			}
-
-			
-			public static double calculateTax(double gross, double taxRate) {
-			
-				// Return the income tax
-				return tax;
-			}
-
-			
-			public static void printSalarySlip(String name, double basic, double gross, double tax, double net) {
-				// Print a line of dashes to separate the salary slip from other output
-				System.out.println("--------------------------------------------------");
-				// Print the salary slip with appropriate formatting
-
-				// Print another line of dashes to separate the salary slip from other output
-				System.out.println("--------------------------------------------------");
-			}
+			public class SalaryCalculator {
 
 				public static void main(String[] args) {
 				Scanner sc = new Scanner(System.in);
