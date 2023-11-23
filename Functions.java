@@ -29,7 +29,7 @@ public class Functions {
         int a = 20;
         int b = 66;
         int c = a + b;
-        int g = a -b;
+        // int g = a -b;
         return c;
     }
 
@@ -47,7 +47,7 @@ public class Functions {
 
         int result = obj.sum3();
 
-       int result2 = obj.sum4(22, 55);
+    //    int result2 = obj.sum4(22, 55);
 
        System.out.println(result);
     }

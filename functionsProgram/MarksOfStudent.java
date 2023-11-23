@@ -38,12 +38,12 @@ public class MarksOfStudent {
  
         System.out.println("Enter Number of Subject");
         count = scanner.nextInt();
-        
+        scanner.close();
         System.out.println("Enter Marks of " + count + " Subject");
         for (i = 0; i < count; i++) {
             totalMarks += scanner.nextInt();
         }
-        scanner.close();
         percentage(totalMarks,count);
+        scanner.close();
     }
 }
